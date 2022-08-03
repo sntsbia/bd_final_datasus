@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.11.xsd"
+        objectQuotingStrategy="QUOTE_ONLY_RESERVED_WORDS">
+    <changeSet id="1" author="project-bd">
+        <createTable tableName="CONDICAO">
+            <column name="id_Condicao" type="BIGINT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="PK_CONDICAO"/>
+            </column>
+            <column name="condicao" type="VARCHAR(255)"/>
+            <column name="fk_id_Pessoa" type="BIGINT"/>
+        </createTable>
+    </changeSet>
+    <changeSet id="2" author="project-bd">
+        <createTable tableName="MUNICIPIO">
+            <column name="id_Municipio" type="BIGINT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="PK_MUNICIPIO"/>
+            </column>
+            <column name="municipio" type="VARCHAR(255)"/>
+            <column name="fk_id_Uf" type="BIGINT"/>
+        </createTable>
+    </changeSet>
+    <changeSet id="3" author="project-bd">
+        <createTable tableName="OCORRE">
+            <column name="OCORRECOMKEY_FK_ID_TESTE" type="BIGINT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="PK_OCORRE"/>
+            </column>
+            <column name="OCORRECOMKEY_FK_ID_MUNICIPIO" type="BIGINT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="PK_OCORRE"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet id="4" author="project-bd">
+        <createTable tableName="PESSOA">
+            <column name="id_Pessoa" type="BIGINT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="PK_PESSOA"/>
+            </column>
+            <column name="sexo" type="VARCHAR(1)"/>
+            <column name="idade" type="BIGINT"/>
+        </createTable>
+    </changeSet>
+    <changeSet id="5" author="project-bd">
+        <createTable tableName="SINTOMAS">
+            <column name="id_Sintomas" type="BIGINT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="PK_SINTOMAS"/>
+            </column>
+            <column name="sintomas" type="VARCHAR(255)"/>
+            <column name="fk_id_Teste" type="BIGINT"/>
+        </createTable>
+    </changeSet>
+    <changeSet id="6" author="project-bd">
+        <createTable tableName="TESTE">
+            <column name="id_Teste" type="BIGINT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="PK_TESTE"/>
+            </column>
+            <column name="data_Teste" type="DATE"/>
+            <column name="resultado" type="BIGINT"/>
+            <column name="fk_id_Pessoa" type="BIGINT"/>
+        </createTable>
+    </changeSet>
+    <changeSet id="7" author="project-bd">
+        <createTable tableName="TOMA">
+            <column name="data" type="DATE"/>
+            <column name="lote" type="VARCHAR(255)"/>
+            <column name="dose" type="BIGINT"/>
+            <column name="TOMACOMPKEY_FK_ID_PESSOA" type="BIGINT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="PK_TOMA"/>
+            </column>
+            <column name="TOMACOMPKEY_FK_ID_VACINA" type="BIGINT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="PK_TOMA"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet id="8" author="project-bd">
+        <createTable tableName="UF">
+            <column name="id_Uf" type="BIGINT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="PK_UF"/>
+            </column>
+            <column name="codigo_ibge" type="BIGINT"/>
+            <column name="estado" type="VARCHAR(255)"/>
+            <column name="bandeira" type="BLOB"/>
+        </createTable>
+    </changeSet>
+    <changeSet id="9" author="project-bd">
+        <createTable tableName="VACINA">
+            <column name="id_Vacina" type="BIGINT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="PK_VACINA"/>
+            </column>
+            <column name="nome_Vacina" type="VARCHAR(255)"/>
+            <column name="fabricante" type="VARCHAR(255)"/>
+        </createTable>
+    </changeSet>
+    <changeSet id="10" author="project-bd">
+        <createIndex indexName="IDX_CONDICAO_FK_ID_PESSOA" tableName="CONDICAO">
+            <column name="fk_id_Pessoa"/>
+        </createIndex>
+
+        <addForeignKeyConstraint baseColumnNames="fk_id_Pessoa" baseTableName="CONDICAO"
+                                 constraintName="FK_CONDICAO_ON_FK_ID_PESSOA" referencedColumnNames="id_Pessoa"
+                                 referencedTableName="PESSOA"/>
+    </changeSet>
+    <changeSet id="11" author="project-bd">
+        <createIndex indexName="IDX_MUNICIPIO_FK_ID_UF" tableName="MUNICIPIO">
+            <column name="fk_id_Uf"/>
+        </createIndex>
+
+        <addForeignKeyConstraint baseColumnNames="fk_id_Uf" baseTableName="MUNICIPIO"
+                                 constraintName="FK_MUNICIPIO_ON_FK_ID_UF" referencedColumnNames="id_Uf"
+                                 referencedTableName="UF"/>
+    </changeSet>
+    <changeSet id="12" author="project-bd">
+        <createIndex indexName="IDX_SINTOMAS_FK_ID_TESTE" tableName="SINTOMAS">
+            <column name="fk_id_Teste"/>
+        </createIndex>
+
+        <addForeignKeyConstraint baseColumnNames="fk_id_Teste" baseTableName="SINTOMAS"
+                                 constraintName="FK_SINTOMAS_ON_FK_ID_TESTE" referencedColumnNames="id_Teste"
+                                 referencedTableName="TESTE"/>
+    </changeSet>
+    <changeSet id="13" author="project-bd">
+        <createIndex indexName="IDX_TESTE_FK_ID_PESSOA" tableName="TESTE">
+            <column name="fk_id_Pessoa"/>
+        </createIndex>
+
+        <addForeignKeyConstraint baseColumnNames="fk_id_Pessoa" baseTableName="TESTE"
+                                 constraintName="FK_TESTE_ON_FK_ID_PESSOA" referencedColumnNames="id_Pessoa"
+                                 referencedTableName="PESSOA"/>
+    </changeSet>
+    <changeSet id="14" author="project-bd">
+        <addForeignKeyConstraint baseColumnNames="OCORRECOMKEY_FK_ID_MUNICIPIO" baseTableName="OCORRE"
+                                 constraintName="FK_OCORRE_ON_OCORRECOMKEYFKIDM" referencedColumnNames="id_Municipio"
+                                 referencedTableName="MUNICIPIO"/>
+    </changeSet>
+    <changeSet id="15" author="project-bd">
+        <addForeignKeyConstraint baseColumnNames="OCORRECOMKEY_FK_ID_TESTE" baseTableName="OCORRE"
+                                 constraintName="FK_OCORRE_ON_OCORRECOMKEYFKIDT" referencedColumnNames="id_Teste"
+                                 referencedTableName="TESTE"/>
+    </changeSet>
+    <changeSet id="16" author="project-bd">
+        <addForeignKeyConstraint baseColumnNames="TOMACOMPKEY_FK_ID_PESSOA" baseTableName="TOMA"
+                                 constraintName="FK_TOMA_ON_TOMACOMPKEYFKIDPESS" referencedColumnNames="id_Pessoa"
+                                 referencedTableName="PESSOA"/>
+    </changeSet>
+    <changeSet id="17" author="project-bd">
+        <addForeignKeyConstraint baseColumnNames="TOMACOMPKEY_FK_ID_VACINA" baseTableName="TOMA"
+                                 constraintName="FK_TOMA_ON_TOMACOMPKEYFKIDVACI" referencedColumnNames="id_Vacina"
+                                 referencedTableName="VACINA"/>
+    </changeSet>
+</databaseChangeLog>

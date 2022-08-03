@@ -1,0 +1,196 @@
+#
+# There is insufficient memory for the Java Runtime Environment to continue.
+# Native memory allocation (mmap) failed to map 134217728 bytes for Failed to commit area from 0x0000000081600000 to 0x0000000089600000 of length 134217728.
+# Possible reasons:
+#   The system is out of physical RAM or swap space
+#   The process is running with CompressedOops enabled, and the Java Heap may be blocking the growth of the native heap
+# Possible solutions:
+#   Reduce memory load on the system
+#   Increase physical memory or swap space
+#   Check if swap backing store is full
+#   Decrease Java heap size (-Xmx/-Xms)
+#   Decrease number of Java threads
+#   Decrease Java thread stack sizes (-Xss)
+#   Set larger code cache with -XX:ReservedCodeCacheSize=
+# This output file may be truncated or incomplete.
+#
+#  Out of Memory Error (./src/hotspot/os/windows/os_windows.cpp:3386), pid=9012, tid=14948
+#
+# JRE version:  (11.0.16+8) (build )
+# Java VM: OpenJDK 64-Bit Server VM (11.0.16+8-LTS, mixed mode, sharing, tiered, compressed oops, g1 gc, windows-amd64)
+# No core dump will be written. Minidumps are not enabled by default on client versions of Windows
+#
+
+---------------  S U M M A R Y ------------
+
+Command Line: -Dfile.encoding=windows-1252 -Duser.country=BR -Duser.language=pt -Duser.variant org.eclipse.persistence.tools.weaving.jpa.StaticWeave -loglevel INFO -persistenceinfo D:\sntsb\Documents\project-bd\build/tmp/entitiesEnhancing/main/projectbd-persistence D:\sntsb\Documents\project-bd\build\classes\java\main D:\sntsb\Documents\project-bd\build\classes\java\main
+
+Host: Intel(R) Core(TM) i5-8250U CPU @ 1.60GHz, 8 cores, 7G,  Windows 11 , 64 bit Build 22000 (10.0.22000.708)
+Time: Wed Aug  3 11:13:58 2022 Hora oficial do Brasil elapsed time: 0.043429 seconds (0d 0h 0m 0s)
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x000001c55cb3d000):  JavaThread "Unknown thread" [_thread_in_vm, id=14948, stack(0x000000a368800000,0x000000a368900000)]
+
+Stack: [0x000000a368800000,0x000000a368900000]
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [jvm.dll+0x61f28a]
+V  [jvm.dll+0x7ac579]
+V  [jvm.dll+0x7adc68]
+V  [jvm.dll+0x7ae343]
+V  [jvm.dll+0x24f968]
+V  [jvm.dll+0x61c59a]
+V  [jvm.dll+0x610d45]
+V  [jvm.dll+0x30788c]
+V  [jvm.dll+0x307712]
+V  [jvm.dll+0x30c426]
+V  [jvm.dll+0x352c3f]
+V  [jvm.dll+0x352670]
+V  [jvm.dll+0x2e4888]
+V  [jvm.dll+0x2e59e6]
+V  [jvm.dll+0x7863c7]
+V  [jvm.dll+0x787b4f]
+V  [jvm.dll+0x35f979]
+V  [jvm.dll+0x769260]
+V  [jvm.dll+0x3cd49f]
+V  [jvm.dll+0x3cf831]
+C  [jli.dll+0x5207]
+C  [ucrtbase.dll+0x26c0c]
+C  [KERNEL32.DLL+0x154e0]
+C  [ntdll.dll+0x485b]
+
+
+---------------  P R O C E S S  ---------------
+
+Threads class SMR info:
+_java_thread_list=0x000001c55ca2d720, length=0, elements={
+}
+
+Java Threads: ( => current thread )
+
+Other Threads:
+  0x000001c55cb56000 GCTaskThread "GC Thread#0" [stack: 0x000000a368900000,0x000000a368a00000] [id=3288]
+  0x000001c55cb8b000 ConcurrentGCThread "G1 Main Marker" [stack: 0x000000a368a00000,0x000000a368b00000] [id=13504]
+  0x000001c55cb8d800 ConcurrentGCThread "G1 Conc#0" [stack: 0x000000a368b00000,0x000000a368c00000] [id=9532]
+
+[error occurred during error reporting (printing all threads), id 0xc0000005, EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x00007ffd6d704057]
+
+VM state:not at safepoint (not fully initialized)
+
+VM Mutex/Monitor currently owned by a thread:  ([mutex/lock_event])
+[0x000001c55cb3a020] Heap_lock - owner thread: 0x000001c55cb3d000
+
+Heap address: 0x0000000081600000, size: 2026 MB, Compressed Oops mode: Non-zero based: 0x0000000081600000
+Narrow klass base: 0x0000000000000000, Narrow klass shift: 0
+
+GC Heap History (0 events):
+No events
+
+Deoptimization events (0 events):
+No events
+
+Classes redefined (0 events):
+No events
+
+Internal exceptions (0 events):
+No events
+
+Events (1 events):
+Event: 0.012 Loaded shared library C:\Program Files\Amazon Corretto\jdk11.0.16_8\bin\zip.dll
+
+
+Dynamic libraries:
+0x00007ff79b210000 - 0x00007ff79b21d000 	C:\Program Files\Amazon Corretto\jdk11.0.16_8\bin\java.exe
+0x00007ffdec6a0000 - 0x00007ffdec8a9000 	C:\WINDOWS\SYSTEM32\ntdll.dll
+0x00007ffdea530000 - 0x00007ffdea5ed000 	C:\WINDOWS\System32\KERNEL32.DLL
+0x00007ffde9c00000 - 0x00007ffde9f79000 	C:\WINDOWS\System32\KERNELBASE.dll
+0x00007ffdea160000 - 0x00007ffdea271000 	C:\WINDOWS\System32\ucrtbase.dll
+0x00007ffddccc0000 - 0x00007ffddccd9000 	C:\Program Files\Amazon Corretto\jdk11.0.16_8\bin\VCRUNTIME140.dll
+0x00007ffde23c0000 - 0x00007ffde23d7000 	C:\Program Files\Amazon Corretto\jdk11.0.16_8\bin\jli.dll
+0x00007ffdea7b0000 - 0x00007ffdea95c000 	C:\WINDOWS\System32\USER32.dll
+0x00007ffdd1a80000 - 0x00007ffdd1d25000 	C:\WINDOWS\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.22000.120_none_9d947278b86cc467\COMCTL32.dll
+0x00007ffdeb390000 - 0x00007ffdeb433000 	C:\WINDOWS\System32\msvcrt.dll
+0x00007ffdea320000 - 0x00007ffdea346000 	C:\WINDOWS\System32\win32u.dll
+0x00007ffdeb700000 - 0x00007ffdeb729000 	C:\WINDOWS\System32\GDI32.dll
+0x00007ffdea350000 - 0x00007ffdea462000 	C:\WINDOWS\System32\gdi32full.dll
+0x00007ffdea280000 - 0x00007ffdea31d000 	C:\WINDOWS\System32\msvcp_win.dll
+0x00007ffdeb570000 - 0x00007ffdeb5a1000 	C:\WINDOWS\System32\IMM32.DLL
+0x00007ffdc2510000 - 0x00007ffdc25ab000 	C:\Program Files\Amazon Corretto\jdk11.0.16_8\bin\msvcp140.dll
+0x00007ffd6d410000 - 0x00007ffd6df94000 	C:\Program Files\Amazon Corretto\jdk11.0.16_8\bin\server\jvm.dll
+0x00007ffdeb440000 - 0x00007ffdeb4ee000 	C:\WINDOWS\System32\ADVAPI32.dll
+0x00007ffdeb850000 - 0x00007ffdeb8ee000 	C:\WINDOWS\System32\sechost.dll
+0x00007ffdeb730000 - 0x00007ffdeb850000 	C:\WINDOWS\System32\RPCRT4.dll
+0x00007ffdeb6f0000 - 0x00007ffdeb6f8000 	C:\WINDOWS\System32\PSAPI.DLL
+0x00007ffddf9f0000 - 0x00007ffddf9f9000 	C:\WINDOWS\SYSTEM32\WSOCK32.dll
+0x00007ffdeb320000 - 0x00007ffdeb38f000 	C:\WINDOWS\System32\WS2_32.dll
+0x00007ffde0c10000 - 0x00007ffde0c1a000 	C:\WINDOWS\SYSTEM32\VERSION.dll
+0x00007ffde24c0000 - 0x00007ffde24f3000 	C:\WINDOWS\SYSTEM32\WINMM.dll
+0x00007ffde8d70000 - 0x00007ffde8d88000 	C:\WINDOWS\SYSTEM32\kernel.appcore.dll
+0x00007ffde2360000 - 0x00007ffde2370000 	C:\Program Files\Amazon Corretto\jdk11.0.16_8\bin\verify.dll
+0x00007ffde7870000 - 0x00007ffde7a91000 	C:\WINDOWS\SYSTEM32\DBGHELP.DLL
+0x00007ffdd5aa0000 - 0x00007ffdd5ad1000 	C:\WINDOWS\SYSTEM32\dbgcore.DLL
+0x00007ffde9b80000 - 0x00007ffde9bff000 	C:\WINDOWS\System32\bcryptPrimitives.dll
+0x00007ffdc3af0000 - 0x00007ffdc3b18000 	C:\Program Files\Amazon Corretto\jdk11.0.16_8\bin\java.dll
+0x00007ffdd79f0000 - 0x00007ffdd79fa000 	C:\Program Files\Amazon Corretto\jdk11.0.16_8\bin\jimage.dll
+0x00007ffdd1630000 - 0x00007ffdd1648000 	C:\Program Files\Amazon Corretto\jdk11.0.16_8\bin\zip.dll
+
+dbghelp: loaded successfully - version: 4.0.5 - missing functions: none
+symbol engine: initialized successfully - sym options: 0x614 - pdb path: .;C:\Program Files\Amazon Corretto\jdk11.0.16_8\bin;C:\WINDOWS\SYSTEM32;C:\WINDOWS\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.22000.120_none_9d947278b86cc467;C:\Program Files\Amazon Corretto\jdk11.0.16_8\bin\server
+
+VM Arguments:
+jvm_args: -Dfile.encoding=windows-1252 -Duser.country=BR -Duser.language=pt -Duser.variant 
+java_command: org.eclipse.persistence.tools.weaving.jpa.StaticWeave -loglevel INFO -persistenceinfo D:\sntsb\Documents\project-bd\build/tmp/entitiesEnhancing/main/projectbd-persistence D:\sntsb\Documents\project-bd\build\classes\java\main D:\sntsb\Documents\project-bd\build\classes\java\main
+java_class_path (initial): C:\Users\sntsb\.gradle\caches\modules-2\files-2.1\org.eclipse.persistence\org.eclipse.persistence.jpa\2.7.9-6-jmix\70996b9263002301d419459715f94e882f366cb3\org.eclipse.persistence.jpa-2.7.9-6-jmix.jar;C:\Users\sntsb\.gradle\caches\modules-2\files-2.1\org.eclipse.persistence\jakarta.persistence\2.2.3\ccb72277523e79f81bbf74535bf6488443403bae\jakarta.persistence-2.2.3.jar;C:\Users\sntsb\.gradle\caches\modules-2\files-2.1\org.eclipse.persistence\org.eclipse.persistence.core\2.7.9-6-jmix\f755ab6872ba56b7cd49d68898784530b6bf208d\org.eclipse.persistence.core-2.7.9-6-jmix.jar;C:\Users\sntsb\.gradle\caches\modules-2\files-2.1\org.eclipse.persistence\org.eclipse.persistence.asm\9.1.0\8d54ede9c97875a52ebad2674d8c86232a395128\org.eclipse.persistence.asm-9.1.0.jar;C:\Users\sntsb\.gradle\caches\modules-2\files-2.1\org.eclipse.persistence\org.eclipse.persistence.antlr\2.7.9\78712ed5187194106a5563f3de0539bed69ed8e5\org.eclipse.persistence.antlr-2.7.9.jar;C:\Users\sntsb\.gradle\caches\modules-2\files-2.1\org.eclipse.persistence\org.eclipse.persistence.jpa.jpql\2.7.9\913893ad4d43b344a045e3a40add2a9418d2556c\org.eclipse.persistence.jpa.jpql-2.7.9.jar;C:\Users\sntsb\.gradle\caches\modules-2\files-2.1\io.jmix.core\jmix-core-starter\1.3.1\8985cc0d8d96705cad9b829af6633e1db6b5f1e7\jmix-core-starter-1.3.1.jar;C:\Users\sntsb\.gradle\caches\modules-2\files-2.1\io.jmix.data\jmix-eclipselink-starter\1.3.1\59305b7cd3dcaba59b22345811744426cedd1176\jmix-eclipselink-starter-1.3.1.jar;C:\Users\sntsb\.gradle\caches\modules-2\files-2.1\io.jmix.ui\jmix-ui-starter\1.3.1\903abd4f0bc22e07ffa32004f7c071d876dcfe9c\jmix-ui-starter-1.3.1.jar;C:\Users\sntsb\.gradle\caches\modules-2\files-2.1\io.jmix.ui\jmix-ui-data-starter\1.3.1\4c459e12a745152790ebd95c63ea6a0c1e7d119\jmix-ui-data-starter-1.3.1.jar;C:\Users\sntsb\.gradle\caches\modules-2\files-2.1\io.jmix.ui\jmix-ui-themes-compiled\1.3.1\9b1bfcf49708e6755cdb9a43bd97d3bd4072dfd7\jmix-ui-themes-compiled-1.3.1.jar;C:\Users\sntsb\.grad
+Launcher Type: SUN_STANDARD
+
+[Global flags]
+     intx CICompilerCount                          = 4                                         {product} {ergonomic}
+     uint ConcGCThreads                            = 2                                         {product} {ergonomic}
+     uint G1ConcRefinementThreads                  = 8                                         {product} {ergonomic}
+   size_t G1HeapRegionSize                         = 1048576                                   {product} {ergonomic}
+    uintx GCDrainStackTargetSize                   = 64                                        {product} {ergonomic}
+   size_t InitialHeapSize                          = 134217728                                 {product} {ergonomic}
+   size_t MarkStackSize                            = 4194304                                   {product} {ergonomic}
+   size_t MaxHeapSize                              = 2124414976                                {product} {ergonomic}
+   size_t MinHeapDeltaBytes                        = 1048576                                   {product} {ergonomic}
+    uintx NonNMethodCodeHeapSize                   = 5836300                                {pd product} {ergonomic}
+    uintx NonProfiledCodeHeapSize                  = 122910970                              {pd product} {ergonomic}
+    uintx ProfiledCodeHeapSize                     = 122910970                              {pd product} {ergonomic}
+    uintx ReservedCodeCacheSize                    = 251658240                              {pd product} {ergonomic}
+     bool SegmentedCodeCache                       = true                                      {product} {ergonomic}
+     bool UseCompressedClassPointers               = true                                 {lp64_product} {ergonomic}
+     bool UseCompressedOops                        = true                                 {lp64_product} {ergonomic}
+     bool UseG1GC                                  = true                                      {product} {ergonomic}
+     bool UseLargePagesIndividualAllocation        = false                                  {pd product} {ergonomic}
+
+Logging:
+Log output configuration:
+ #0: stdout all=warning uptime,level,tags
+ #1: stderr all=off uptime,level,tags
+
+Environment Variables:
+JAVA_HOME=C:\Program Files\Amazon Corretto\jdk11.0.16_8
+PATH=C:\Program Files\Amazon Corretto\jdk11.0.16_8\bin;C:\Python310\Scripts\;C:\Python310\;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\ProgramData\chocolatey\bin;D:\Arquiv\Git\cmd;D:\Arquivos de Programas\Git\cmd;C:\Program Files\GitHub CLI\;D:\Arquivos de Programas\Git\mingw64\libexec\git-core;D:\Arquivos de Programas\Git;D:\Arquivos de Programas\Calibre2\;D:\Arquiv\nodejs\;C:\Program Files\Microsoft SQL Server\130\Tools\Binn\;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\170\Tools\Binn\;C:\Program Files\MySQL\MySQL Shell 8.0\bin\;C:\Users\sntsb\AppData\Local\Microsoft\WindowsApps;D:\Arquivos de Programas\MiKTeX\miktex\bin\x64\;;C:\Users\sntsb\AppData\Local\JetBrains\Toolbox\scripts;C:\Users\sntsb\AppData\Roaming\npm;C:\Users\sntsb\AppData\Local\Programs\Microsoft VS Code\bin
+USERNAME=sntsb
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 142 Stepping 10, GenuineIntel
+TMP=C:\Users\sntsb\AppData\Local\Temp
+TEMP=C:\Users\sntsb\AppData\Local\Temp
+
+
+
+---------------  S Y S T E M  ---------------
+
+OS: Windows 11 , 64 bit Build 22000 (10.0.22000.708)
+OS uptime: 1 days 17:28 hours
+
+CPU:total 8 (initial active 8) (4 cores per cpu, 2 threads per core) family 6 model 142 stepping 10 microcode 0xe0, cmov, cx8, fxsr, mmx, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, avx, avx2, aes, clmul, erms, 3dnowpref, lzcnt, ht, tsc, tscinvbit, bmi1, bmi2, adx, fma
+
+Memory: 4k page, system-wide physical 8102M (432M free)
+TotalPageFile size 32678M (AvailPageFile size 70M)
+current process WorkingSet (physical memory assigned to process): 10M, peak: 10M
+current process commit charge ("private bytes"): 60M, peak: 188M
+
+vm_info: OpenJDK 64-Bit Server VM (11.0.16+8-LTS) for windows-amd64 JRE (11.0.16+8-LTS), built on Jul 17 2022 01:39:49 by "Administrator" with MS VC++ 15.9 (VS2017)
+
+END.

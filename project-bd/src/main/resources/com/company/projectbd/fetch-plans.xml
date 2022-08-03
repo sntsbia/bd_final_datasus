@@ -1,0 +1,14 @@
+<fetchPlans xmlns="http://jmix.io/schema/core/fetch-plans">
+    <fetchPlan entity="Ocorre" name="ocorre-fetch-plan" extends="_base">
+        <property name="fkIdMunicipio" fetchPlan="_base"/>
+        <property name="fkIdTeste" fetchPlan="_base"/>
+    </fetchPlan>
+    <fetchPlan entity="Mora" name="mora-fetch-plan" extends="_base">
+        <property name="fkIdMunicipio" fetchPlan="_base"/>
+        <property name="fkIdPessoa" fetchPlan="_base"/>
+    </fetchPlan>
+    <fetchPlan entity="Toma" name="toma-fetch-plan" extends="_base">
+        <property name="fkIdPessoa" fetchPlan="_base"/>
+        <property name="fkIdVacina" fetchPlan="_base"/>
+    </fetchPlan>
+</fetchPlans>

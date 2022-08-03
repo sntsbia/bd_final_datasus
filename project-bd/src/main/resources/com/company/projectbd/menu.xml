@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<menu-config xmlns="http://jmix.io/schema/ui/menu">
+
+    <menu id="application" caption="msg://com.company.projectbd/menu.application" insertBefore="administration">
+        <item screen="User.browse" caption="msg://com.company.projectbd.screen.user/UserBrowse.caption"/>
+<!--        <item screen="themeSettingsScreen" caption="msg://io.jmix.ui.app.themesettings/themeSettings.caption"/>-->
+        <item screen="Pessoa.browse" caption="msg://com.company.projectbd.screen.pessoa/pessoaBrowse.menu"/>
+        <item screen="Condicao.browse" caption="msg://com.company.projectbd.screen.condicao/condicaoBrowse.menu"/>
+        <item screen="Mora.browse" caption="msg://com.company.projectbd.screen.mora/moraBrowse.menu"/>
+        <item screen="Municipio.browse" caption="msg://com.company.projectbd.screen.municipio/municipioBrowse.menu"/>
+<!--        <item screen="Ocorre.browse" caption="msg://com.company.projectbd.screen.ocorre/ocorreBrowse.menu"/>-->
+        <item screen="Sintomas.browse" caption="msg://com.company.projectbd.screen.sintomas/sintomasBrowse.menu"/>
+        <item screen="Teste.browse" caption="msg://com.company.projectbd.screen.teste/testeBrowse.menu"/>
+        <item screen="Toma.browse" caption="msg://com.company.projectbd.screen.toma/tomaBrowse.menu"/>
+        <item screen="Uf.browse" caption="msg://com.company.projectbd.screen.uf/ufBrowse.menu"/>
+        <item screen="Vacina.browse" caption="msg://com.company.projectbd.screen.vacina/vacinaBrowse.menu"/>
+<!--        <item screen="MunicipioCasos.browse"-->
+<!--              caption="msg://com.company.projectbd.screen.municipio/municipioCasosBrowse.menu"/>-->
+        <item screen="VacinaMunicipio.browse"
+        caption="msg://com.company.projectbd.screen.vacinamunicipio/vacinaMunicipioBrowse.menu"/>
+        <item screen="NewEntity.browse" caption="msg://com.company.projectbd.screen.newentity/newEntityBrowse.menu"/>
+        <item screen="CasoPorMunicipio.browse"
+              caption="msg://com.company.projectbd.screen.casopormunicipio/casoPorMunicipioBrowse.menu"/>
+        <item screen="IdadeCoronavac.browse"
+              caption="msg://com.company.projectbd.screen.idadecoronavac/idadeCoronavacBrowse.menu"/>
+        <item screen="PessoaAcima30.browse"
+              caption="msg://com.company.projectbd.screen.pessoa/pessoaAcima30Browse.menu"/>
+        <!--        <item screen="PessoaSemVacina.browse"-->
+<!--              caption="msg://com.company.projectbd.screen.pessoa/pessoaSemVacinaBrowse.menu"/>-->
+<!--        <item screen="MunicipioTeste.browse"-->
+<!--              caption="msg://com.company.projectbd.screen.municipio/municipioTesteBrowse.menu"/>-->
+<!--        <item screen="DataDia.browse" caption="msg://com.company.projectbd.screen.datadia/dataDiaBrowse.menu"/>-->
+    </menu>
+
+</menu-config>
