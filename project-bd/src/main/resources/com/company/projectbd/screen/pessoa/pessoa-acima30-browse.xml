@@ -9,7 +9,7 @@
             <fetchPlan extends="_base"/>
             <loader id="pessoasDl">
                 <query>
-                    <![CDATA[SELECT p FROM Pessoa p INNER JOIN Mora m INNER JOIN Municipio mu where p.idade > 30 AND mu.municipio = 'Rio de Janeiro']]>
+                    <![CDATA[SELECT p FROM Pessoa p INNER JOIN Mora m INNER JOIN Municipio mu where p.idade > 90 AND mu.municipio = 'Rio de Janeiro']]>
                 </query>
             </loader>
         </collection>
